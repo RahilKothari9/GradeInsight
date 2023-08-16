@@ -224,3 +224,16 @@
     height:90%;
   }
 }
+
+/* For register button */
+.register{
+  width: 100%;
+  background: rgb(91, 146, 200);
+  height: 8vh;
+  border-radius: 7px;
+  font-family: 'Source Serif 4', serif;
+  cursor: pointer;
+  font-size: xx-large;
+  margin-bottom:5%;
+  
+}
