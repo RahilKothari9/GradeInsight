@@ -74,7 +74,7 @@ def login():
         else:
             return error("Wrong credentials!")
     else:
-        return render_template("login.html")
+        return render_template("index.html")
     
 @app.route("/a21bcd", methods = ["GET", "POST"])
 def register():
