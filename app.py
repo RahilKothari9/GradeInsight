@@ -76,7 +76,7 @@ def login():
     else:
         return render_template("index.html")
     
-@app.route("/a21bcd", methods = ["GET", "POST"])
+@app.route("/a21bcd", methods = ["GET", "POST"])   
 def register():
     if request.method == "POST":
         if not request.form.get("email"):
