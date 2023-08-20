@@ -93,38 +93,6 @@ function takeYearInput(){
 
 
 
-function createNewCourse(){
-   
-   
-    const deepCopy = perCourse.cloneNode(true);
-    deepCopy.classList.remove("sample_course")
-    deepCopy.classList.add("course1")
-
-
-    trash.forEach(button =>{
-        button.addEventListener("click", (e)=>{
-            const buttonPiece = e.target
-            console.log(buttonPiece.innerText)
-        })
-    })
-
-
-    deepCopy.classList.add("newclass")
-    
-    
-   
-    takeCourseInput()
-    takeYearInput()
-    allCourses.appendChild(deepCopy);
-    console.log("working")
-    allCourses.classList.remove("hidden")
-    
-
-
-
-    
-   
-}
 
 function blur(){
     right_coloumn.classList.remove("blur")
@@ -135,25 +103,42 @@ const newclass = document.querySelector('.newclass')
 
 
 
-// document.onclick=function(event){
-//     var container = addCourse_wrapper_id;
-//     console.log(event)
-//     console.log(event.target.matches('.addcourse_form_wrapper'));
-//     console.log(event.target.classList.contains("addcourse_form_wrapper"))
-//     console.log(container.style.flex);
-//     if(addCourse_wrapper_id.classList.contains('show'))
-//     {
-//         if(event.target.matches('.addcourse_form_wrapper') && !event.target.classList.contains("addcourse_form_wrapper") && event.target.classList.contains("courseclick") && event.target.matches('courseclick')){
-//             container.classList.remove("show");
-//             blur()
-//         }
-        
-//     }   
-// }
+
 
 
 
 cross.addEventListener("click", ()=>{
     addCourse_wrapper_id.classList.remove("show");
     blur()
+})
+
+
+
+
+
+
+
+//DELETE COURSE
+
+
+
+const deleteCourses = document.querySelectorAll('.trash')
+const showBox = document.querySelector(".sendmail_wrapper")
+let confirmBtn = document.querySelectorAll('.click')
+
+
+
+deleteCourses.forEach(function(e) {
+    e.addEventListener("click", ()=>{
+    showBox.classList.add("showConfirm")
+    showBox.classList.remove("hidden")
+    
+});
+})
+
+confirmBtn.forEach(function(ele) {
+    ele.addEventListener("click", ()=>{
+    showBox.classList.remove("showConfirm")
+    showBox.classList.add("hidden")
+});
 })

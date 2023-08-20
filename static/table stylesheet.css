@@ -263,9 +263,25 @@ a.tableform, a.home, a.graph{
   width: 90%;
   
 }
+.showConfirm{
+  width: 30%;
+  height: 5em;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-30%);
+  border: 2px solid black;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
 
 .hidden{
-  display: none;
+  display: none !important;
 }
 
 .home, .graph, .tableform{
@@ -276,3 +292,51 @@ a.tableform, a.home, a.graph{
 canvas{
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
+
+.sendmail_wrapper{
+  width: 30%;
+  height: 5em;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-30%);
+  border: 2px solid black;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  
+
+}
+
+
+.yes_no{
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  justify-items: center;
+  padding-top: 3%;
+}
+
+.sendmail_form{
+  width: 100%;
+
+}
+
+.confirmation{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+

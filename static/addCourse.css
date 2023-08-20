@@ -172,7 +172,7 @@ button{
 }
 
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 .course1{
@@ -182,7 +182,7 @@ button{
     align-content: center;
  
     align-items: center;
-    
+    width: 100%;
     height: 12em;
     background-color: rgba(80, 105, 193, 1);
     border-radius: 1em;
@@ -235,10 +235,10 @@ button{
 .show {
     display: block;
 }
-.text_content_wrapper{
+.text_context_wrapper{
     
     height: 7em;
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -494,3 +494,8 @@ form{
 
 
 
+
+
+  button{
+    cursor: pointer;
+  }
