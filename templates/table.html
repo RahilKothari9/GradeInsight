@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500&display=swap" rel="stylesheet">
+    <script defer src="/static/table.js"></script>
     <style>
         table {
             border-collapse: collapse;
@@ -86,23 +87,31 @@
     </div>
        
         
-        <div class="sendmail" >
-            <button id="mail" >SEND MAILS</button>
-            <div id ="sendmail_wrapper" class="sendmail_wrapper ">
+    <div class="sendmail" >
+        <button id="mail" class="mail">SEND MAILS</button>
+            
+    </div>
+
+
+
+
+    <div id ="sendmail_wrapper " class="sendmail_wrapper hidden ">
                 
-                <div class="wrapper">
-                    <div class="sendmail_form">
-                        <div class="confirmation">
-                           Do you want to send mails to everyone in the table?
-                        </div>
+            <div class="wrapper">
+                <div class="sendmail_form">
+                    <div class="confirmation">
+                       Do you want to send mails to everyone in the table?
                     </div>
                 </div>
-                <a href="/sendmail/{{course_id}}">
-                     <button type="submit" class="submityes">YES</button>
-                </a>
-                <button type="submit" class="submitno">NO</button>
             </div>
-        </div>
+            <div class="yes_no">
+                <a href="/sendmail/{{course_id}}">
+                    <button type="submit" class="submityes click">YES</button>
+               </a>
+               <button type="submit" class="submitno click">NO</button>
+            </div>
+            
+    </div>
             
    
     
