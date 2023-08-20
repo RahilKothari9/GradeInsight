@@ -187,6 +187,10 @@ def upload_file(course_id):
 @login_required
 def graph(course_id):
     xl = 'uploads/'+ course_id
+    path = Path("uploads/" + course_id)
+    if(not path.is_file()):
+        #return error("You have not uploaded an excel file for this yet.")
+        return render_template("123.html", message="You have not uploaded an excel file for this course yet.")
     df = pd.read_excel(io = xl) # can also index sheet by name or fetch all sheets
     name = df['NAME'].tolist()
     somaiyaid = df['SOMAIYA_ID'].tolist()
@@ -204,7 +208,28 @@ def graph(course_id):
     data = [0,0,0,0,0,0,0,0,0,0]
     data1 = [0,0,0,0,0,0,0,0,0,0]
     data2 = [0,0,0,0,0,0,0,0,0,0]
+    maxise = max(ise)
+    maxese = max(ese)
+    maxtot = max(tot)
 
+    iseMean =  int(sum(ise)/len(ise))
+    eseMean =  int(sum(ese)/len(ese))
+    totMean =  int(sum(tot)/len(tot))
+
+
+    
+    isenames = []
+    esenames = []
+    totnames = []
+
+    for i in range(len(ise)):
+        if ise[i] == maxise:
+            isenames.append(name[i])
+        if ese[i] == maxese:
+            esenames.append(name[i])
+        if tot[i] == maxise:
+            totnames.append(name[i])
+    
     for marks in tot:
         r = int(marks/10)
         
@@ -221,8 +246,10 @@ def graph(course_id):
         r = int(marks/5)
 
         data2[r] += 1
-    return render_template('graph.html', course_id=course_id, labels=labels, data=data, labels_ise=labels2, data_ise=data2, labels_ese=labels3, data_ese=data1)
-
+    return render_template('graph.html', course_id=course_id, labels=labels, data=data, 
+        labels_ise=labels2, data_ise=data2, labels_ese=labels3, data_ese=data1, maxise=maxise, maxese=maxese, 
+        maxtot=maxtot, isenames = isenames, esenames = esenames, totnames = totnames, iseMean=iseMean, eseMean=eseMean, 
+        totMean=totMean)
 
 
 @app.route('/viewmarks/<filename>')
@@ -230,7 +257,8 @@ def graph(course_id):
 def upload(filename):
     path = Path("uploads/" + filename)
     if(not path.is_file()):
-        return error("You have not uploaded an excel file for this yet.(Frontend peeps link to /fileupload/course_id pls)")
+        #return error("You have not uploaded an excel file for this yet.")
+        return render_template("123.html", message="You have not uploaded an excel file for this yet.")
     xl = 'uploads/'+filename
     df = pd.read_excel(io = xl)
     #print(1)
@@ -241,7 +269,9 @@ def upload(filename):
 @login_required
 def sendmail(courseid):
     path = Path("uploads/" + courseid)
-
+    if(not path.is_file()):
+        #return error("You have not uploaded an excel file for this yet.")
+        return render_template("123.html", message="You have not uploaded an excel file for this yet.")
     xl = 'uploads/'+courseid
     df = pd.read_excel(io = xl)
     name = df['NAME'].tolist()
