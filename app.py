@@ -212,6 +212,24 @@ def graph(course_id):
     maxese = max(ese)
     maxtot = max(tot)
 
+    iseMean =  int(sum(ise)/len(ise))
+    eseMean =  int(sum(ese)/len(ese))
+    totMean =  int(sum(tot)/len(tot))
+
+
+    
+    isenames = []
+    esenames = []
+    totnames = []
+
+    for i in range(len(ise)):
+        if ise[i] == maxise:
+            isenames.append(name[i])
+        if ese[i] == maxese:
+            esenames.append(name[i])
+        if tot[i] == maxise:
+            totnames.append(name[i])
+    
     for marks in tot:
         r = int(marks/10)
         
@@ -228,7 +246,10 @@ def graph(course_id):
         r = int(marks/5)
 
         data2[r] += 1
-    return render_template('graph.html', course_id=course_id, labels=labels, data=data, labels_ise=labels2, data_ise=data2, labels_ese=labels3, data_ese=data1, maxise=maxise, maxese=maxese, maxtot=maxtot)
+    return render_template('graph.html', course_id=course_id, labels=labels, data=data, 
+        labels_ise=labels2, data_ise=data2, labels_ese=labels3, data_ese=data1, maxise=maxise, maxese=maxese, 
+        maxtot=maxtot, isenames = isenames, esenames = esenames, totnames = totnames, iseMean=iseMean, eseMean=eseMean, 
+        totMean=totMean)
 
 
 @app.route('/viewmarks/<filename>')
