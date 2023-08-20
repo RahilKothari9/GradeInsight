@@ -93,38 +93,6 @@ function takeYearInput(){
 
 
 
-function createNewCourse(){
-   
-   
-    const deepCopy = perCourse.cloneNode(true);
-    deepCopy.classList.remove("sample_course")
-    deepCopy.classList.add("course1")
-
-
-    trash.forEach(button =>{
-        button.addEventListener("click", (e)=>{
-            const buttonPiece = e.target
-            console.log(buttonPiece.innerText)
-        })
-    })
-
-
-    deepCopy.classList.add("newclass")
-    
-    
-   
-    takeCourseInput()
-    takeYearInput()
-    allCourses.appendChild(deepCopy);
-    console.log("working")
-    allCourses.classList.remove("hidden")
-    
-
-
-
-    
-   
-}
 
 function blur(){
     right_coloumn.classList.remove("blur")

@@ -182,7 +182,7 @@ button{
     align-content: center;
  
     align-items: center;
-    
+    width: 100%;
     height: 12em;
     background-color: rgba(80, 105, 193, 1);
     border-radius: 1em;
@@ -235,10 +235,10 @@ button{
 .show {
     display: block;
 }
-.text_content_wrapper{
+.text_context_wrapper{
     
     height: 7em;
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -494,56 +494,6 @@ form{
 
 
 
-.sendmail_wrapper{
-    width: 30%;
-    height: 8em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-30%);
-    border: 2px solid black;
-    background-color: beige;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
-    
-  
-  }
-  
-  
-  .yes_no{
-    display: flex !important;
-    width: 50% !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    align-content: center !important;
-    justify-content: space-around !important;
-    justify-items: center !important;
-    padding-top: 3% !important;
-  }
-  
-  .sendmail_form{
-    width: 100%;
-  
-  }
-  
-  .confirmation{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
-  }
-
-  .submityes, .submitno{
-
-    border-radius: 0;
-  }
 
 
   button{

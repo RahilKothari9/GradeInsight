@@ -60,26 +60,29 @@
                     
                         <!-- removed sample-course -->
                         {%for course in courses%}
-                        <a href="/course/{{course[0]}}">
+                        
                         <div class="course1 " id="course1">
-                            
+                            <a href="/course/{{course[0]}}">
                             <div class="text_context_wrapper">
                                 <div class="text_content">
                                     <h4 class="course_name_output"> {{ course[1] }}</h4><br>
                                     <h5 class="year_output">{{course[3] }}</h5>
                                 </div>
                             </div>
+                            </a>
                             <div class="trash_wrapper">
-                            <form action="/delete" method=post>
-                                <input type=hidden value={{course[0]}} name="course_id">
+                            
+                                <!-- <input type=hidden value={{course[0]}} name="course_id"> -->
                                 <button class="trash" id="trash" type="submit">DELETE COURSE</button>
                                 
-                            </form>
+                            
                             </div>
                         
                             
                         </div>
-                        </a>
+                        
+                            
+                        
                         {%endfor%}
                     
             </div>
@@ -113,23 +116,7 @@
         
     </div>
 
-    <div id ="sendmail_wrapper " class="sendmail_wrapper hidden ">
-                
-        <div class="wrapper_send">
-            <div class="sendmail_form">
-                <div class="confirmation">
-                   Do you want to delete this course?
-                </div>
-            </div>
-        </div>
-        <div class="yes_no">
-            
-                <button type="submit" class="submityes click">YES</button>
-          
-           <button type="submit" class="submitno click">NO</button>
-        </div>
-        
-</div>
+    
     <script  src="/static/addCourse.js"></script>
     
 </body>
