@@ -72,6 +72,20 @@
                             <form action="/delete" method=post>
                                 <input type=hidden value={{course[0]}} name="course_id">
                                 <button class="trash" id="trash" type="submit">DELETE COURSE</button>
+                                <div id ="del_wrapper" class="del_wrapper ">
+                
+                                    <div class="wrapper">
+                                        <div class="del_form">
+                                            <div class="confirmation">
+                                               Do you want to delete the folder ?
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/delete">
+                                         <button type="submit" class="submityes">YES</button>
+                                    </a>
+                                    <button type="submit" class="submitno">NO</button>
+                                </div>
                             </form>
                             </div>
                         

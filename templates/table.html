@@ -83,19 +83,28 @@
             </table>
         </div>
             
-        
-        
     </div>
-   
-    
-       
-
        
         
         <div class="sendmail" >
-            <a href="/sendmail/{{course_id}}"><button id="mail" >SEND MAILS</button></a>
-
+            <button id="mail" >SEND MAILS</button>
+            <div id ="sendmail_wrapper" class="sendmail_wrapper ">
+                
+                <div class="wrapper">
+                    <div class="sendmail_form">
+                        <div class="confirmation">
+                           Do you want to send mails to everyone in the table?
+                        </div>
+                    </div>
+                </div>
+                <a href="/sendmail/{{course_id}}">
+                     <button type="submit" class="submityes">YES</button>
+                </a>
+                <button type="submit" class="submitno">NO</button>
+            </div>
         </div>
+            
+   
     
    
 </body>
