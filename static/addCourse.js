@@ -130,15 +130,15 @@ let confirmBtn = document.querySelectorAll('.click')
 
 deleteCourses.forEach(function(e) {
     e.addEventListener("click", ()=>{
-    showBox.classList.add("showConfirm")
-    showBox.classList.remove("hidden")
+        showBox.classList.add("showConfirm")
+        showBox.classList.remove("hidden")
     
 });
 })
 
 confirmBtn.forEach(function(ele) {
     ele.addEventListener("click", ()=>{
-    showBox.classList.remove("showConfirm")
-    showBox.classList.add("hidden")
+        showBox.classList.remove("showConfirm")
+        showBox.classList.add("hidden")
 });
 })

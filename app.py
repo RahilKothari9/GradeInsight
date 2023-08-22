@@ -285,7 +285,7 @@ def sendmail(courseid):
     ca = df['CA'].tolist()
     tot = df['TOTAL'].tolist()
     email_sender = 'grade.insight1@gmail.com'
-    email_password = ''
+    email_password = 'idfjuspamrjpktyw'
     
     for i in range(len(name)):
         email_receiver = somaiyaid[i]
@@ -327,4 +327,3 @@ def delete():
 if __name__ == "__main__":
     #print(os.getenv('TEST'))
     app.run(debug="True")
-
