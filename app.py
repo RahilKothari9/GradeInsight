@@ -192,6 +192,7 @@ def graph(course_id):
         #return error("You have not uploaded an excel file for this yet.")
         return render_template("123.html", message="You have not uploaded an excel file for this course yet.")
     df = pd.read_excel(io = xl) # can also index sheet by name or fetch all sheets
+    df.index = df.index + 1
     name = df['NAME'].tolist()
     somaiyaid = df['SOMAIYA_ID'].tolist()
     rollno = df['ROLLNO'].tolist()
@@ -261,6 +262,7 @@ def upload(filename):
         return render_template("123.html", message="You have not uploaded an excel file for this yet.")
     xl = 'uploads/'+filename
     df = pd.read_excel(io = xl)
+    df.index = df.index + 1
     #print(1)
     #print(df)
     return render_template('table.html',  tables=[df.to_html(classes='data')], titles=df.columns.values, course_id=filename)
@@ -274,6 +276,7 @@ def sendmail(courseid):
         return render_template("123.html", message="You have not uploaded an excel file for this yet.")
     xl = 'uploads/'+courseid
     df = pd.read_excel(io = xl)
+    df.index = df.index + 1
     name = df['NAME'].tolist()
     somaiyaid = df['SOMAIYA_ID'].tolist()
     rollno = df['ROLLNO'].tolist()
