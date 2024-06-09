@@ -3,7 +3,7 @@ import os
 from werkzeug.utils import secure_filename
 import pandas as pd
 from flask_session import Session
-from api.helpers import login_required, error
+from helpers import login_required, error
 from werkzeug.security import check_password_hash, generate_password_hash
 import mysql.connector
 from pathlib import Path
@@ -327,6 +327,6 @@ def delete():
     return redirect("courses")
     #print("DELETING")
 
-# if __name__ == "__main__":
-#     #print(os.getenv('TEST'))
-#     app.run(debug="True")
+if __name__ == "__main__":
+    #print(os.getenv('TEST'))
+    app.run(debug="True")
