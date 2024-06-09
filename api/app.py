@@ -327,6 +327,6 @@ def delete():
     return redirect("courses")
     #print("DELETING")
 
-if __name__ == "__main__":
-    #print(os.getenv('TEST'))
-    app.run(debug="True")
+# if __name__ == "__main__":
+#     #print(os.getenv('TEST'))
+#     app.run(debug="True")
